@@ -1,0 +1,15 @@
+html, body {
+    /*height:100%;
+    width: 100%;
+    margin:0;
+    display: flex;
+    flex-direction: column;*/
+    /*background: rgb(32, 32, 32);*/
+    background: url('./images/pexels-codioful-7130566.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
