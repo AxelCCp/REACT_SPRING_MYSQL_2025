@@ -3,7 +3,7 @@ import { addUserSystem, userSystemList, updateUserSystem, deleteUserSystem } fro
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useLogin } from "../auth/hooks/useLogin";
-import { getUsersSystemSlice, addUserSystemSlice, initialUserSystemForm, initialUserSystemFormErrors,  initialUsersSystem,} from "../store/slices/userSystem/userSystemSlice";
+import { getUsersSystemSlice, addUserSystemSlice, updateUserSystemSlice, deleteUserSystemSlice, onUserSystemSelectedFormSlice, onCloseFormUserSystemSlice, initialUserSystemForm, initialUserSystemFormErrors } from "../store/slices/userSystem/userSystemSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 
@@ -11,19 +11,13 @@ export const useUsersSystem = () => {
 
     const navigate = useNavigate();
 
-    //const [usersSystem, dispatch] = useReducer(userSystemReducer, initialUsersSystem);
-
-    const { usersSystem } = useSelector(state => state.userSystemSlice);
+    const { usersSystem, visibleForm, userSystemSelected } = useSelector(state => state.userSystemSlice);
 
     const dispatch = useDispatch();
-
-    const [visibleForm, setVisibleForm] = useState(false);
 
     const [userSystemFormErrors, setUserSystemFormErrors] = useState(initialUserSystemFormErrors);
 
     const { login, handlerLogout } = useLogin();
-
-    const [userSystemSelected, setUserSystemSelected] = useState(initialUserSystemForm);
 
     const getUsersSystem = async () => {
         
@@ -169,7 +163,9 @@ export const useUsersSystem = () => {
             result = await updateUserSystem(userSystem, listaRoles);  
             console.log(result);
 
-            dispatch({type:'updateUserSystem', payload:result.data.userSystem}); 
+            //dispatch({type:'updateUserSystem', payload:result.data.userSystem}); 
+
+            dispatch(updateUserSystemSlice(result.data.userSystem));
             
             handlerCloseForm();
 
@@ -224,13 +220,16 @@ export const useUsersSystem = () => {
 
       
     const handlerUserSystemSelectedForm = (userSystem) => {
-        setVisibleForm(true);
-        setUserSystemSelected({ ...userSystem });
+
+        dispatch(onUserSystemSelectedFormSlice({ ...userSystem }))
+        
     }
 
     const handlerCloseForm = () => {
-        setVisibleForm(false);
-        setUserSystemSelected(initialUserSystemForm);
+        //setVisibleForm(false);
+        //setUserSystemSelected(initialUserSystemForm);
+
+        dispatch(onCloseFormUserSystemSlice());
     }
 
 
@@ -255,10 +254,7 @@ export const useUsersSystem = () => {
 
                     console.log('handlerDeleteUserSystem - resp: ', resp);
 
-                    dispatch({
-                        type: 'deleteUserSystem',
-                        payload: idUser,
-                    });
+                    dispatch(deleteUserSystemSlice(idUser));
 
                     Swal.fire({
                         title: 'User system deleted!',

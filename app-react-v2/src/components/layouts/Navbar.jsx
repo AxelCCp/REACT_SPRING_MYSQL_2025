@@ -112,7 +112,7 @@ export const Navbar = () => {
 
                 <div>
 
-                <Dropdown className="mx-2 ">
+                <Dropdown className="mx-2">
 
                     <Dropdown.Toggle variant="dark rounded-pill btn-lg" id="dropdown-basic">
                         <img src="../src/images/pngfind.com-skeletor-png-792083.png"  className="me-3" style={{width:'30px', height:'30px'}} />
@@ -121,9 +121,9 @@ export const Navbar = () => {
 
                     </Dropdown.Toggle>
           
-                    <Dropdown.Menu className="bg-light mr-2 my-3" >
+                    <Dropdown.Menu className="bg-dark mr-2 my-3" >
                         
-                        <Dropdown.Item className="my-1" href="#/action-1">
+                        <Dropdown.Item className="my-1 text-light" href="#/action-1">
                             <img src="../src/images/pngfind.com-skeletor-png-792083.png"  className="me-3" style={{width:'35px', height:'35px'}} />
                             {login.nickName}
                         </Dropdown.Item>
@@ -132,29 +132,29 @@ export const Navbar = () => {
                         
                         <Dropdown.Item className="my-1 dropdownItem" href="#/action-2">
                             <img src="../src/images/config.ico"  className="ml-1" style={{width:'25px', height:'25px'}} />
-                            <NavLink className="btn btn-link rounded-pill text-dark" to={'/account'} style={{textDecoration:'none'}}>Manage your acccount</NavLink>
+                            <NavLink className="btn btn-link rounded-pill text-light" to={'/account'} style={{textDecoration:'none'}}>Manage your acccount</NavLink>
                         </Dropdown.Item>
                         
                         <Dropdown.Item className="my-1 dropdownItem" href="#/action-3">
                             <img src="../src/images/cloud.ico"  className="ml-1" style={{width:'25px', height:'25px'}} /> 
-                            <NavLink className="btn btn-link rounded-pill text-dark" style={{textDecoration:'none'}}>Something else</NavLink> 
+                            <NavLink className="btn btn-link rounded-pill text-light" style={{textDecoration:'none'}}>Something else</NavLink> 
                         </Dropdown.Item>
                         
                         <Dropdown.Item className="my-1 dropdownItem" href="#/action-4">
                             <img src="../src/images/moon.ico"  className="ml-1" style={{width:'25px', height:'25px'}} /> 
-                            <NavLink className="btn btn-link rounded-pill text-dark" style={{textDecoration:'none'}}>Dark theme</NavLink>
+                            <NavLink className="btn btn-link rounded-pill text-light" style={{textDecoration:'none'}}>Dark theme</NavLink>
                         </Dropdown.Item>
                         
                         <Dropdown.Item className="my-1 dropdownItem" href="#/action-5">
                             <img src="../src/images/help.ico"  className="ml-1" style={{width:'25px', height:'25px'}} /> 
-                            <NavLink className="btn btn-link rounded-pill text-dark" style={{textDecoration:'none'}}>Help</NavLink>
+                            <NavLink className="btn btn-link rounded-pill text-light" style={{textDecoration:'none'}}>Help</NavLink>
                         </Dropdown.Item>
                         
                         <Dropdown.Divider />
                         
                         <Dropdown.Item className="my-1 dropdownItem" href="#/action-6">
                             <img src="../src/images/logout.ico"  className="ml-1" style={{width:'25px', height:'25px'}} />
-                            <NavLink className="btn btn-link rounded-pill text-dark" style={{textDecoration:'none'}} onClick={handlerLogout}>Sign out</NavLink>
+                            <NavLink className="btn btn-link rounded-pill text-light" style={{textDecoration:'none'}} onClick={handlerLogout}>Sign out</NavLink>
                         </Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>

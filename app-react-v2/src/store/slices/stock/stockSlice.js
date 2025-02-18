@@ -57,7 +57,7 @@ export const stockSlice = createSlice({
         updateProductSlice : (state, action) => {
 
             state.products = state.products.map(p => {
-                if(p-idCorrelative === action.payload.idCorrelative) {
+                if(p.idCorrelative === action.payload.idCorrelative) {
                     return {
                         ...action.payload,
                     };

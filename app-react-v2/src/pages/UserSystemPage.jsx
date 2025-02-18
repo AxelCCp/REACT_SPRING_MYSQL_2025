@@ -13,16 +13,15 @@ export const UserSystemPage = () => {
 
     useEffect(() => {
         getUsersSystem();
-        console.log('visibleForm... ', visibleForm)
+        console.log('visibleForm... ', visibleForm);
     }, []);
 
     
-
     return (
 
         <>
 
-            {
+            {   
                 !visibleForm || <UserSystemModalForm />
             }
 

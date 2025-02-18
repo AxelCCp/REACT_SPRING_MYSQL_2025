@@ -30,7 +30,7 @@ export const AppRoutes = () => {
 
                      
                       
-                        
+                   
                         <Routes>
                             
                             <Route path="stock" element={<StockPage />} />

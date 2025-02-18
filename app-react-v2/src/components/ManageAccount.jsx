@@ -18,16 +18,16 @@ export const ManageAccount = () => {
 
         <>
         
-            <div className="bg-light border rounded">   
+            <div className="border rounded" style={{backgroundColor:'rgba(20, 20, 20, 0.9)'}}>    
 
                 <div className="row mt-2">
 
 
                     <div className="col-3">
 
-                        <div className="list-group ms-2 text-secondary">
+                        <div className="list-group ms-2 text-secondary bg-dark">
                             
-                            <a className="list-group-item text-start border-0 hover-list bg-secondary">
+                            <a className="list-group-item text-start border-0 hover-list bg-dark text-light">
 
                                 <div className="row">
                                     <div className="col-1">
@@ -40,7 +40,7 @@ export const ManageAccount = () => {
                                
                             </a>
 
-                            <a className="list-group-item text-start border-0 hover-list">
+                            <a className="list-group-item text-start border-0 hover-list bg-secondary text-light">
                                 
                                 <div className="row ms-1">
                                     <div className="col-1">
@@ -54,7 +54,7 @@ export const ManageAccount = () => {
                             </a>
 
 
-                            <a className="list-group-item text-start border-0 hover-list">
+                            <a className="list-group-item text-start border-0 hover-list bg-secondary text-light">
                                 
                                 <div className="row ms-1">
                                     <div className="col-1">
@@ -67,7 +67,7 @@ export const ManageAccount = () => {
                         
                             </a>
 
-                            <a className="list-group-item text-start border-0 hover-list">
+                            <a className="list-group-item text-start border-0 hover-list bg-secondary text-light">
                                 
                                 <div className="row ms-1">
                                     <div className="col-1">
@@ -80,7 +80,7 @@ export const ManageAccount = () => {
                         
                             </a>
 
-                            <a className="list-group-item text-start border-0 hover-list">
+                            <a className="list-group-item text-start border-0 hover-list bg-secondary text-light">
                                 
                                 <div className="row ms-1">
                                     <div className="col-1">
@@ -125,8 +125,7 @@ export const ManageAccount = () => {
                         <h3 className="text-secondary lh-base mt-3">{'Welcome ' + login.nickName + '!'}</h3>
 
 
-                        <p className="mt-3">Manage your information, privacy and security to improve your experience.</p>
-
+                        <p className="mt-3 text-light">Manage your information, privacy and security to improve your experience.</p>
 
 
                         <div className="row mt-5 mb-3">
