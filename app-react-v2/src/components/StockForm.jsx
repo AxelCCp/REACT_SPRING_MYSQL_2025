@@ -49,11 +49,13 @@ export const StockForm = ({productSelected}) => {
         
         if(!sku || !name || !description || !brand || !price || !units || !manufactureDate){                                                           
             
-            Swal.fire(
-                'Validation error',
-                'You must complete all fields in the form.',
-                'error'
-            );
+            Swal.fire({
+                title: 'Validation error',
+                text: 'You must complete all fields in the form.',
+                icon: 'error',
+                background: '#212f3d',
+                color: '#ccd1d1',
+        });
             
             return;
 

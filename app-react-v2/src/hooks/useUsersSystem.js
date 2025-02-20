@@ -169,7 +169,13 @@ export const useUsersSystem = () => {
             
             handlerCloseForm();
 
-            Swal.fire('User system updated', 'The user system was updates successfully!', 'success');
+            Swal.fire({
+                title: 'User system updated', 
+                text: 'The user system was updated successfully!', 
+                icon: 'success',
+                background: '#212f3d',
+                color: '#ccd1d1',
+            });
 
             setUserSystemFormErrors(initialUserSystemFormErrors);
 
@@ -240,6 +246,8 @@ export const useUsersSystem = () => {
             title: 'Are you sure you want to delete?',
             text: "Be careful, the user system will be deleted!",
             icon: 'warning',
+            background: '#212f3d',
+            color: '#ccd1d1',
             showCancelButton: true,
             confirmButtonColor: '#d33', 
             cancelButtonColor: '#3085d6',
@@ -261,6 +269,8 @@ export const useUsersSystem = () => {
                         text: 'The user system has been deleted successfully!',
                         icon: 'success',
                         confirmButtonColor: '#3085d6',
+                        background: '#212f3d',
+                        color: '#ccd1d1',
                     })
                 }
 

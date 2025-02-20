@@ -47,7 +47,13 @@ export const useProducts = () => {
 
             dispatch(addProductSlice(result.data));
     
-            Swal.fire('Product created', 'The product was created successfully!', 'success');
+            Swal.fire({
+                title: 'Product created', 
+                text: 'The product was created successfully!', 
+                icon: 'success',
+                background: '#212f3d',
+                color: '#ccd1d1',
+            });
             
             navigate('/stock');
 
@@ -76,7 +82,13 @@ export const useProducts = () => {
 
             dispatch(updateProductSlice(result.data));
     
-            Swal.fire('Product updated', 'The product was updates successfully!', 'success');
+            Swal.fire({
+                title: 'Product updated', 
+                text: 'The product was updated successfully!', 
+                icon: 'success',
+                background: '#212f3d',
+                color: '#ccd1d1',
+            });
     
             navigate('/stock');
 
@@ -102,6 +114,8 @@ export const useProducts = () => {
             title: 'Are you sure you want to delete?',
             text: "Be careful, the product will be deleted!",
             icon: 'warning',
+            background: '#212f3d',
+            color: '#ccd1d1',
             showCancelButton: true,
             confirmButtonColor: '#d33', 
             cancelButtonColor: '#3085d6',
@@ -122,6 +136,8 @@ export const useProducts = () => {
                         text: 'The product has been deleted successfully!',
                         icon: 'success',
                         confirmButtonColor: '#3085d6',
+                        background: '#212f3d',
+                        color: '#ccd1d1',
                     });
 
                 } catch (error) {
